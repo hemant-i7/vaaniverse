@@ -1,4 +1,6 @@
 "use client";
+import Link from 'next/link';
+
 
 import React from 'react';
 import { Cover } from "@/components/ui/cover";
@@ -6,37 +8,13 @@ import { Button } from "@/components/ui/button";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Navbar } from '@/components/navbar';
 
 export default function Page() {
   return (
     <div className="min-h-screen bg-[#180161]">
-      {/* Header */}
-      <header className="container mx-auto px-4 py-6">
-        <nav className="flex items-center justify-between">
-          <Image
-            src="/logo.png"
-            alt="VaaniVerse Logo"
-            width={150}
-            height={50}
-            className="w-auto h-12"
-          />
-          <div className="flex gap-4">
-            <Button variant="ghost" className="text-white hover:text-[#FB773C]">
-              About
-            </Button>
-            <Button variant="ghost" className="text-white hover:text-[#FB773C]">
-              Features
-            </Button>
-            <Button variant="ghost" className="text-white hover:text-[#FB773C]">
-              Contact
-            </Button>
-            <Button className="bg-[#EB3678] hover:bg-[#FB773C] text-white">
-              Get Started
-            </Button>
-          </div>
-        </nav>
-      </header>
-
+   
+   <Navbar />
       {/* Hero Section */}
       <section className="relative py-20">
         <div className="absolute inset-0 w-full h-full">
@@ -74,9 +52,11 @@ export default function Page() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mt-12 flex justify-center gap-6"
           >
+             <Link href="/dashboard">
             <Button className="bg-[#EB3678] hover:bg-[#FB773C] text-white text-lg px-8 py-6">
               Start Now
             </Button>
+            </Link>
             <Button
               variant="outline"
               className="border-[#4F1787] text-white hover:bg-[#4F1787] text-lg px-8 py-6"
