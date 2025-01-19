@@ -163,7 +163,7 @@ export default function Dashboard() {
               {!isLoading && videoUrl && (
                 <div className="mt-4">
                   <video
-                    src="/input.mp4"
+                    src="${videoUrl}"
                     controls
                     className="w-full rounded-lg"
                   >
