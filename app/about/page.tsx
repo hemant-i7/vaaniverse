@@ -142,6 +142,10 @@ export default function About() {
           Try VaaniVerse Now <ArrowRight className="ml-2" />
         </Button>
       </section>
+
+      <p>
+        Don&apos;t hesitate to reach out if you have any questions!
+      </p>
     </div>
   );
 }

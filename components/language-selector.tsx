@@ -1,19 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { Check, ChevronsUpDown } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { ChevronsUpDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { 
-  Command as CommandComponent, 
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-} from '@/components/ui/command'
 import {
   Popover,
-  PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
 
@@ -26,11 +17,10 @@ const languages = [
 ]
 
 interface LanguageSelectorProps {
-  value: string
-  onChange: (value: string) => void
+  onChange?: (value: string) => void;
 }
 
-export function LanguageSelector({ value, onChange }: LanguageSelectorProps) {
+export function LanguageSelector({ onChange }: LanguageSelectorProps) {
   const [open, setOpen] = useState(false)
   // Remove this line:
   // const [value, setValue] = useState('hindi')
@@ -46,8 +36,8 @@ export function LanguageSelector({ value, onChange }: LanguageSelectorProps) {
             aria-expanded={open}
             className="w-full justify-between bg-white/10 border-white/20 text-white hover:bg-white/20"
           >
-            {value
-              ? languages.find((language) => language.value === value)?.label
+            {onChange
+              ? languages.find((language) => language.value === onChange)?.label
               : "Select language..."}
             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>

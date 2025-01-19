@@ -6,7 +6,14 @@ import { Navbar } from '@/components/navbar';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 // import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  // Remove these unused imports
+  // Select,
+  // SelectContent,
+  // SelectItem,
+  // SelectTrigger,
+  // SelectValue,
+} from "@/components/ui/select"
 import { ArrowRight, Youtube, Globe, Clock, Play, PenTool, Send } from 'lucide-react';
 
 const steps = [
@@ -16,11 +23,6 @@ const steps = [
   { icon: Play, title: "Start Translation", description: "Click the 'Start Translation' button to begin the AI-powered translation process." },
   { icon: PenTool, title: "Create a Blog", description: "Use the translated content to create an informative blog post." },
   { icon: Send, title: "Publish Your Blog", description: "Share your knowledge by publishing your blog on our portal." },
-];
-
-const languages = [
-  "Hindi", "Marathi", "Gujarati", "Tamil", "Kannada",
-  "Telugu", "Bengali", "Malayalam", "Punjabi", "Odia"
 ];
 
 export default function Tutorial() {

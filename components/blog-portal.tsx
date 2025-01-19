@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Search, Filter } from 'lucide-react'
+import { Search } from 'lucide-react'
 import { mockBlogs, mockCategories } from '@/data/mockBlogs'
 import { BlogFilter } from '@/types/blog'
 

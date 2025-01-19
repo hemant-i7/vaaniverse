@@ -31,7 +31,7 @@ export const Cover = ({
       );
       setBeamPositions(positions);
     }
-  }, [ref.current]);
+  }, []);
 
   return (
     <div
@@ -91,7 +91,6 @@ export const Cover = ({
           key={index}
           hovered={hovered}
           duration={Math.random() * 2 + 1}
-          delay={Math.random() * 2 + 1}
           width={containerWidth}
           style={{
             top: `${position}px`,
@@ -138,25 +137,23 @@ export const Cover = ({
         {children}
       </motion.span>
       <CircleIcon className="absolute -right-[2px] -top-[2px]" />
-      <CircleIcon className="absolute -bottom-[2px] -right-[2px]" delay={0.4} />
-      <CircleIcon className="absolute -left-[2px] -top-[2px]" delay={0.8} />
-      <CircleIcon className="absolute -bottom-[2px] -left-[2px]" delay={1.6} />
+      <CircleIcon className="absolute -bottom-[2px] -right-[2px]" />
+      <CircleIcon className="absolute -left-[2px] -top-[2px]" />
+      <CircleIcon className="absolute -bottom-[2px] -left-[2px]" />
     </div>
   );
 };
 
 export const Beam = ({
   className,
-  delay,
-  duration,
   hovered,
+  duration,
   width = 600,
   ...svgProps
 }: {
   className?: string;
-  delay?: number;
-  duration?: number;
   hovered?: boolean;
+  duration?: number;
   width?: number;
 } & React.ComponentProps<typeof motion.svg>) => {
   const id = useId();
@@ -198,7 +195,6 @@ export const Beam = ({
             ease: "linear",
             repeat: Infinity,
             delay: hovered ? Math.random() * (1 - 0.2) + 0.2 : 0,
-            repeatDelay: hovered ? Math.random() * (2 - 1) + 1 : delay ?? 1,
           }}
         >
           <stop stopColor="#2EB9DF" stopOpacity="0" />
@@ -212,10 +208,8 @@ export const Beam = ({
 
 export const CircleIcon = ({
   className,
-  delay,
 }: {
   className?: string;
-  delay?: number;
 }) => {
   return (
     <div

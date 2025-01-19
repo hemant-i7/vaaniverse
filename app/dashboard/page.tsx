@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select"
 import { Navbar } from '@/components/navbar'
 
+
 // Available languages
 const LANGUAGES = [
   { value: 'hindi', label: 'Hindi' },
@@ -163,7 +164,7 @@ export default function Dashboard() {
               {!isLoading && videoUrl && (
                 <div className="mt-4">
                   <video
-                    src="${videoUrl}"
+                    src={`${videoUrl}`}
                     controls
                     className="w-full rounded-lg"
                   >

@@ -5,7 +5,6 @@ import { Cover } from "@/components/ui/cover";
 import { Button } from "@/components/ui/button";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Navbar } from '@/components/navbar';
 
 export default function Page() {
