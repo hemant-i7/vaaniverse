@@ -55,7 +55,7 @@ export function VideoDubbing() {
                   id="videoUrl"
                   value={videoUrl}
                   onChange={(e) => setVideoUrl(e.target.value)}
-                  placeholder="https://youtu.be/..."
+                  placeholder="Paste the URL of the YouTube video..."
                   className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 pl-10 focus:outline-none focus:ring-2 focus:ring-[#EB3678] transition-all"
                 />
                 <Youtube className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40" />
