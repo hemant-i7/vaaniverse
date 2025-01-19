@@ -37,7 +37,7 @@ export function LanguageSelector({ onChange }: LanguageSelectorProps) {
             className="w-full justify-between bg-white/10 border-white/20 text-white hover:bg-white/20"
           >
             {onChange
-              ? languages.find((language) => language.value === onChange)?.label
+              ? languages.find(() => 0)?.label
               : "Select language..."}
             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>

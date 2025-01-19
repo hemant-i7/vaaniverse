@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Youtube } from "lucide-react";
 import { VideoPreview } from "./video-preview";
 import { VideoTranslation } from "./video-translation";
@@ -16,6 +16,10 @@ export function VideoDubbing() {
   const [progress, setProgress] = useState<TranslationProgress | null>(null);
   const [directPost, setDirectPost] = useState<boolean>(false);
   const [selectedLanguage, setSelectedLanguage] = useState<SupportedLanguage>("hindi");
+
+  useEffect(() => {
+    setVideoDetails(null)
+  },[])
 
   const languages: { code: SupportedLanguage; label: string }[] = [
     { code: "hindi", label: "Hindi" },

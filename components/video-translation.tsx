@@ -12,7 +12,6 @@ interface VideoTranslationProps {
 }
 
 export function VideoTranslation({ 
-  videoDetails, 
   targetLanguage, 
   directPost, 
   onProgress, 

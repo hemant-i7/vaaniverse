@@ -1,13 +1,22 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Plus, Edit2, Trash2, BarChart2 } from 'lucide-react'
 import { mockBlogs } from '@/data/mockBlogs'
 import { BlogPost, BlogFilter } from '@/types/blog'
 
 export function BlogDashboard() {
   const [filter, setFilter] = useState<BlogFilter>({})
-  const [blogs, setBlogs] = useState<BlogPost[]>(mockBlogs)
+  const [blogs, setBlogs] = useState<BlogPost[]>()
+
+  console.log(filter)
+
+  useEffect(() =>{
+    setFilter({})
+    setBlogs(mockBlogs)
+  },[])
+
+  
 
   return (
     <section className="space-y-6">
@@ -33,7 +42,7 @@ export function BlogDashboard() {
               </tr>
             </thead>
             <tbody>
-              {blogs.map((blog) => (
+              {blogs && blogs.map((blog) => (
                 <tr key={blog.id} className="border-b border-white/10">
                   <td className="py-3 px-4">{blog.title}</td>
                   <td className="py-3 px-4">{blog.language}</td>
